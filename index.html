@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻醉專高隨身刷題庫 (Miller 5大章節)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 15px;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 10px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header h1 { margin: 0; font-size: 1.4rem; }
+        .header p { margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.9; }
+        .chapter-title {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 10px 15px;
+            border-left: 5px solid #3182ce;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+        }
+        .meta {
+            font-size: 0.8rem;
+            color: #718096;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .question {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a202c;
+        }
+        .options {
+            margin-bottom: 12px;
+        }
+        .option {
+            padding: 8px 12px;
+            margin: 4px 0;
+            background-color: #f7fafc;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        .toggle-btn {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .toggle-btn:active {
+            background-color: #2b6cb0;
+        }
+        .answer-panel {
+            display: none;
+            margin-top: 12px;
+            padding: 12px;
+            background-color: #f0fff4;
+            border-left: 4px solid #38a169;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95rem;
+        }
+        .ans-letter {
+            color: #38a169;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .hint {
+            margin-top: 5px;
+            color: #4a5568;
+            font-size: 0.88rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>麻醉專高隨身刷題庫</h1>
+        <p>5年歷屆試題：已讀完之 Miller 核心 5 大章節</p>
+    </div>
+
+    <div class="chapter-title">💡 主題一：減重麻醉 (Bariatric Surgery) - Miller Ch 54</div>
+    
+    <div class="card">
+        <div class="meta">110年 筆試第25題</div>
+        <div class="question">下列何者不是減重手術麻醉照顧需要注意的事項？</div>
+        <div class="options">
+            <div class="option">(A) 麻醉中使用靜脈輸注 propofol 較 desflurane 氣體麻醉恢復更快</div>
+            <div class="option">(B) 術中需注意呼吸道處置、擺位和麻醉藥物劑量調整</div>
+            <div class="option">(C) 術前評估包括合併症、呼吸道狀況、心臟功能和肝功能等</div>
+            <div class="option">(D) Propofol、rocuronium、sugammadex 和 remifentanil 劑量可根據理想體重 (ideal body weight) 調整</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(A)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>在病態肥胖患者中，Desflurane 等低血/氣溶解度的吸入性麻醉劑，其甦醒與恢復速度顯著快於持續靜脈輸注 Propofol（Propofol 長時間輸注在脂肪組織中累積較多）。藥物如 Rocuronium 則多依據理想體重(IBW)計算以防劑量過大。</div>
+        </div>
+    </div>
+
+    <div class="chapter-title">💡 主題二：骨科麻醉 (Orthopedic Surgery) - Miller Ch 60</div>
+    
+    <div class="card">
+        <div class="meta">111年 筆試第19題</div>
+        <div class="question">關於病人接受骨科手術麻醉時須注意事項，何者為非？</div>
+        <div class="options">
+            <div class="option">(A) 在急性心肌梗塞發作過後 2 周內進行髖或膝關節置換，心因性風險明顯增加</div>
+            <div class="option">(B) 關節置換手術中發生中風的機率為 0.2%，而且 &gt;75 歲以上的病患風險更高</div>
+            <div class="option">(C) 約有 5-50% 老年病患會發生術後譫妄</div>
+            <div class="option">(D) 對於中度和高度心血管風險的病人接受骨科手術前，阿斯匹靈可以在術前 5 天停用，術後 7 天再開始使用</div>
+            <div class="option">(E) 類風溼性關節炎病史病人麻醉時需注意顳顎關節(TMJ)侷限、會厭開口狹窄及頸椎不穩定</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(D)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>對於中、高心血管栓塞風險的病人，圍術期常規**不建議**直接停用 Aspirin。貿然停用 5 天且術後延遲使用，會大幅增加急性支架栓塞或心肌梗塞的風險。</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="meta">111年 筆試第20題</div>
+        <div class="question">80 歲老人大腿骨折預計進行手術，關於骨折手術麻醉，何者為非？</div>
+        <div class="options">
+            <div class="option">(A) 老年病患發生近端股骨骨折，通常和高死亡率有關，一年死亡率可高達 30%</div>
+            <div class="option">(B) 髖關節骨折所造成的疼痛和壓力常導致缺血性心臟病，完整的術前評估是必要的</div>
+            <div class="option">(C) 對於病況穩定的病人，不需要早期 (&lt;24小時) 骨折復位手術</div>
+            <div class="option">(D) 區域麻醉可減低深層靜脈血栓生成、減少肺栓塞並降低呼吸道併發症</div>
+            <div class="option">(E) 髖關節骨折病人可能會發生骨髓碎片流入肺循環而造成肺栓塞</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(C)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>指引明確指出，老年髖關節/股骨骨折病患只要內科狀況相對穩定，**應儘早（建議 24 小時內）進行手術復位固定**，可顯著減少長期臥床引發的肺炎、壓瘡、DVT 以及術後譫妄。</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="meta">113年 筆試第59題</div>
+        <div class="question">80 歲男性有冠狀動脈疾病病史，接受全膝關節置換手術。術中突然發生低血壓休克，先前有使用骨水泥 (bone cement)。下列敘述何者最為適當？</div>
+        <div class="options">
+            <div class="option">(A) 手術後 2 周內，相較未手術者，發生急性心肌梗塞的風險可以增加 30 倍以上</div>
+            <div class="option">(B) 此病患手術中可以使用 tranexamic acid (TXA) 降低手術中與手術後失血</div>
+            <div class="option">(C) 右心功能不佳並非發生 bone cement implantation syndrome (BCIS) 之危險因子</div>
+            <div class="option">(D) BCIS 主因是循環中 methyl methacrylate monomer 毒性，經食道心臟超音波(TEE)檢查並不會發現有 embolism</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(B)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>(B) 膝/髖關節置換常規使用 TXA 能有效減少出血且不顯著增加血栓風險。(C) 右心功能不佳、高齡和骨質疏鬆都是 BCIS 的高危險因子；(D) 灌注骨水泥時，透過 TEE 常可直接在右心房/右心室觀察到大量微小栓子（embolism）飛過，證明其伴隨機械性栓塞生理。</div>
+        </div>
+    </div>
+
+    <div class="chapter-title">💡 主題三：產科麻醉 (Obstetrics) - Miller Ch 58</div>
+    
+    <div class="card">
+        <div class="meta">110年 筆試第17題</div>
+        <div class="question">關於減痛分娩的敘述，下列作法何者最合適？</div>
+        <div class="options">
+            <div class="option">(A) 腰椎硬膜外止痛的時機，需等到子宮頸口擴張至 3 公分以上</div>
+            <div class="option">(B) Remifentanil 靜脈輸注適用在無法接受減痛的產婦，效果佳且無風險</div>
+            <div class="option">(C) Neuraxial analgesia (區域性減痛) 是目前最有效的產科減痛分娩方式</div>
+            <div class="option">(D) Meperidine 肌肉注射是產婦止痛首選</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(C)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>目前產科與麻醉醫學會共識皆指出，硬膜外減痛時機不需受限於子宮頸擴張公分數(3公分是舊觀念)；靜脈 Remifentanil PCA 仍有母體與新生兒呼吸抑制風險；Neuraxial (如 Epidural 或 CSE) 依然是臨床上最有效、滿意度最高的黃金標準。</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="meta">111年 筆試第50題</div>
+        <div class="question">孕婦於剖腹產全身麻醉誘導時，吸入性肺炎風險增加的原因及注意事項下列敘述何者錯誤？</div>
+        <div class="options">
+            <div class="option">(A) 懷孕時期 progesterone 和 estrogen 增加會使下食道括約肌(LES)張力下降</div>
+            <div class="option">(B) 胎盤分泌的 Gastrin 會增加孕婦胃酸分泌</div>
+            <div class="option">(C) 孕婦的胃排空時間在未進入產程前不會顯著延長</div>
+            <div class="option">(D) 臨床常用的肌肉鬆弛劑(如 Rocuronium)通常會大量經過胎盤造成新生兒呼吸抑制</div>
+            <div class="option">(E) 吸入性麻醉劑維持麻醉會劑量依賴性抑制子宮張力，當胎兒產出後應降低吸入性濃度並追加催產素</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(D)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>麻醉常用的高度游離、高分子量肌肉鬆弛劑（如 Succinylcholine、Rocuronium、Cisatracurium）**極不易跨越胎盤屏障**（Placental barrier），因此在剖腹產全身麻醉時，常規劑量不會對新生兒造成肌鬆或呼吸抑制。</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="meta">111年 筆試第51題</div>
+        <div class="question">關於孕婦的生理變化敘述何者正確？</div>
+        <div class="options">
+            <div class="option">(A) 呼吸生理：minute ventilation (MV) 沒有改變，FRC 減少</div>
+            <div class="option">(B) 心血管生理：Cardiac output (CO) 增加，Heart rate (HR) 增加</div>
+            <div class="option">(C) 心血管生理：Systemic vascular resistance (SVR) 下降，Pulmonary vascular resistance (PVR) 沒有改變</div>
+            <div class="option">(D) 凝血功能為 hypercoagulable 併輕微血小板數量大幅增加</div>
+            <div class="option">(E) 產婦對吸入性麻醉藥的敏感性(MAC)跟一般婦女一樣</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(B)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>孕婦足月時心輸出量(CO)增加達 30-50%，心跳(HR)上升 15-20%。(A) 孕婦的 MV 會大幅增加達 50% 以因應高氧耗；(C) SVR 與 PVR 在孕期皆呈顯著下降；(E) 孕婦因黃體素及內源性鴉片系統上升，對氣體麻醉藥敏感度增加（MAC需求降低高達 30-40%）。</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="meta">112年 & 114年 筆試雙重熱門題</div>
+        <div class="question">關於產婦麻醉的死亡風險，下列敘述何者正確？</div>
+        <div class="options">
+            <div class="option">(A) 大部分發生於剖腹產手術的術後恢復期</div>
+            <div class="option">(B) 困難氣道(Difficult airway)與插管失敗為施行全身麻醉產婦最常見死亡相關因素</div>
+            <div class="option">(C) 死亡率從早年逐年下降，推測原因與插管工具進步有關</div>
+            <div class="option">(D) 病人本身相關因素則以血液栓塞或羊水栓塞為最常見</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(B)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>產科麻醉施行 GA 時，由於產婦黏膜水腫、體重增加及 FRC 快速低血氧，**困難氣道與無法順利插管通氣**長年來都是全身麻醉相關致死與嚴重併發症的頭號主因。</div>
+        </div>
+    </div>
+
+    <div class="chapter-title">💡 主題四：腹腔器官移植麻醉 (Abdominal Organ Transplantation) - Miller Ch 56</div>
+    
+    <div class="card">
+        <div class="meta">110年 筆試第20題</div>
+        <div class="question">關於活體肝臟移植手術麻醉之敘述，下列何者錯誤？</div>
+        <div class="options">
+            <div class="option">(A) 捐贈者術後可能會發生血小板低下、PT 及 aPTT 延長，故術前若植入硬脊膜外導管止痛，應儘早（術後第1-2天）移除</div>
+            <div class="option">(B) 術中翻動肝臟有時會使下腔靜脈靜脈回流受阻，使血壓降低，將肝臟復位後便能改善</div>
+            <div class="option">(C) 部分醫院會要求低中心靜脈壓 (&lt;5 mmHg) 的方法來減少切肝時的失血量</div>
+            <div class="option">(D) 高血鉀 (hyperkalemia) 可以利尿劑與 insulin + glucose 治療</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(A)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>活體肝臟捐贈者（Donor）在部分切肝術後第 2 至 4 天凝血功能會達到最差的高峰（PT延長、血小板降到最低）。如果放置了 Epidural catheter，**絕對不可以**在此時盲目或提早移除，否則極易引發硬膜外血腫。必須等凝血功能改善或回穩後移除才安全。</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="meta">110年 筆試第22題</div>
+        <div class="question">對於肝臟移植手術麻醉的照護，下列敘述何者錯誤？</div>
+        <div class="options">
+            <div class="option">(A) 新肝期 (neohepatic stage) 再灌流 (reperfusion) 可能會造成嚴重高血鉀，可用 calcium chloride 矯正心肌穩定度</div>
+            <div class="option">(B) 冷缺血時間 (cold ischemia time) 愈短愈容易發生再灌流症候群 (post-reperfusion syndrome)</div>
+            <div class="option">(C) 無肝期 (anhepatic stage) 阻斷下腔靜脈(IVC cross-clamp)，可降低高達一半的靜脈回流</div>
+            <div class="option">(D) 再灌流症候群常會造成急性系統性低血壓與一過性肺動脈高壓</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(B)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>冷缺血時間（Cold ischemia time）**愈長**，移植物組織缺氧及釋放代謝廢物(如酸、鉀、細胞激素)就愈多，當開啟血流再灌注時，發生嚴重再灌流症候群（PRS）的機會與嚴重度就**愈高**。</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="meta">111年 筆試第56題</div>
+        <div class="question">關於肝臟移植麻責圍術期過程，下列敘述何者為錯誤？</div>
+        <div class="options">
+            <div class="option">(A) 無肝期夾住 IVC 會降低約一半的回心血流量</div>
+            <div class="option">(B) 新肝期再灌流時引發的高血鉀，可用 Calcium chloride 和 sodium bicarbonate 來治療</div>
+            <div class="option">(C) 肝移植受贈者凝血功能差異大，輸血與凝血製品應根據臨床點滴端檢驗(如 TEG/ROTEM)，不建議盲目預防性大量給予</div>
+            <div class="option">(D) 肌肉鬆弛劑 Cisatracurium 代謝不受肝功能影響，是很好的選擇</div>
+            <div class="option">(E) 末期肝病受贈者之心血管系統處於高動力循環狀態，以高心輸出量、高動脈血壓和高系統性血管阻力為特徵</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(E)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>末期肝病/肝硬化患者典型的 **高動力循環（Hyperdynamic circulation）** 三大特徵為：高心輸出量（High CO）、**低血壓（Low BP）以及極低的周邊血管阻力（Low SVR）**。故 (E) 的描述完全相反。</div>
+        </div>
+    </div>
+
+    <div class="chapter-title">💡 主題五：泌尿與腎臟系統麻醉 (GU Surgery) - Miller Ch 55</div>
+    
+    <div class="card">
+        <div class="meta">110年 筆試第23題</div>
+        <div class="question">關於經尿道攝護腺刮除術 (TURP) 的麻醉照護，下列敘述何者正確？</div>
+        <div class="options">
+            <div class="option">(A) 與脊髓麻醉相較，全身麻醉在術中更容易吸收較多的沖洗液</div>
+            <div class="option">(B) 為避免術中低體溫，加溫沖洗液容易造成血管擴張而大量增加出血風險</div>
+            <div class="option">(C) TURP syndrome 產生腦水腫的主因為血液滲透壓快速下降，造成水分大量移入腦組織</div>
+            <div class="option">(D) 全身麻醉下執行單極電燒 TURP 術後發生心血管併發症的機率顯著低於半身麻醉</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(C)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>TURP 症候群的關鍵生理在於術中前列腺靜脈竇竇口大開，大量吸收低張無鈉的沖洗液，造成**急性稀釋性低血鈉及血清總滲透壓急遽下降**，引發細胞內水分滲漏（水分往高滲透壓去），導致大腦急性水腫、抽搐及昏迷。</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="meta">111年 筆試第49題</div>
+        <div class="question">傳統 Monopolar TURP 手術過程中，下列注意事項何者正確？</div>
+        <div class="options">
+            <div class="option">(A) 脊椎麻醉(目標 T10)可維持病人清醒以利快速發現 TURP 症候群，並能減少沖洗液的吸收</div>
+            <div class="option">(B) 單極電燒沖洗液最好使用 Isotonic 溶液如 Normal saline 或 Ringer 氏液以避免低血鈉</div>
+            <div class="option">(C) TURP 症候群主要是在術中吸收過多沖洗液導致高血糖、高血氨與高血容量</div>
+            <div class="option">(D) 當急性稀釋性低血鈉使得血鈉值降到 120 mEq/L 左右時，病人常呈現躁動 (restlessness) 或意識混亂 (confusion)</div>
+            <div class="option">(E) 為了避免低體溫而加溫沖洗液，在指引中因會增加大量失血而被明文禁止</div>
+        </div>
+        <button class="toggle-btn" onclick="toggleAns(this)">💡 點擊顯示正確答案與解析</button>
+        <div class="answer-panel">
+            <span class="ans-letter">正確答案：(D)</span>
+            <div class="hint"><strong>Miller核心考點：</strong>(A) 半身麻醉是為了「早期發現」意識變化，但「無法減少」吸收量。(B) 單極電燒不可使用含電解質的 NS/LR，否則電流會分散無法切割（雙極 Bipolar 才可以）。(D) 當血鈉急性掉到 120 mEq/L 時，中樞神經受損，清醒產生的第一徵兆就是 Restlessness 與 Confusion。</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAns(btn) {
+            var panel = btn.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+                btn.textContent = "💡 點擊顯示正確答案與解析";
+                btn.style.backgroundColor = "#3182ce";
+            } else {
+                panel.style.display = "block";
+                btn.textContent = "🔒 點擊隱藏答案";
+                btn.style.backgroundColor = "#718096";
+            }
+        }
+    </script>
+</body>
+</html>
