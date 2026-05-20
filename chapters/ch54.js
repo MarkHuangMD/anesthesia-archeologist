@@ -1,5 +1,6 @@
 // Ch54 減重麻醉統計資料 (供網頁顯示)
 window.ch54_info = {
+    title: "Ch54 減重麻醉",
     total_count: 10,
     percentage: "2.0%",
     distribution: [
