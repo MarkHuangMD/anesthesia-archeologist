@@ -188,15 +188,20 @@
             const container = document.getElementById('quiz-container');
             container.innerHTML = ''; // 清空上一章的內容
 
-            // 3. 【這裡就是你要貼的位置】讀取統計資料並顯示
+            // 2. 讀取統計資料並顯示 (這段就是你要的顯示邏輯)
             const stats = window[chapterKey + '_info'];
             if (stats) {
-                // 使用 += 把統計卡片「加進去」，不要覆蓋掉
+                // 將年份陣列轉換成你要求的文字格式
+                let distText = stats.distribution.map(d => `&nbsp;&nbsp; - ${d.year}年：第 ${d.questions.join(', ')} 題`).join('<br>');
+                
                 container.innerHTML += `
                     <div class="card" style="border: 2px solid var(--primary-color); margin-bottom: 20px;">
-                        <div class="meta" style="color:var(--primary-color)">📊 統計資料</div>
-                        <p style="margin: 5px 0;">1. 110-114年總共有：<strong>${stats.total_count} 題</strong> (佔 500 總題數之 <strong>${stats.percentage}</strong>)</p>
-                        <p style="margin: 5px 0;">2. 年份與題號分佈：<br>${stats.distribution}</p>
+                        <div class="meta" style="color:var(--primary-color); font-size: 1rem;">📊 ${stats.title} 統計資料</div>
+                        <div style="font-size: 0.95rem; line-height: 1.6;">
+                            <strong>1. 110-114 年總共有：${stats.total_count} 題</strong> (佔總題數 ${stats.percentage})<br>
+                            <strong>2. 年份與題號分佈：</strong><br>
+                            ${distText}
+                        </div>
                     </div>
                 `;
             }
