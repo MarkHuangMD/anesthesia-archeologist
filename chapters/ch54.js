@@ -1,15 +1,8 @@
 // Ch54 減重麻醉統計資料 (供網頁顯示)
 window.ch54_info = {
-    title: "Ch54 減重麻醉",
-    total_count: 10,
+    total: 10,
     percentage: "2.0%",
-    distribution: [
-        { year: 114, questions: [49, 50] },
-        { year: 113, questions: [49, 50] },
-        { year: 112, questions: [49, 50] },
-        { year: 111, questions: [52] },
-        { year: 110, questions: [25, 52, 53] }
-    ]
+    dist: "114年：第 49, 50 題<br>113年：第 49, 50 題<br>112年：第 49, 50 題<br>111年：第 52 題<br>110年：第 25, 52, 53 題"
 };
 
 // 題目與詳解資料庫
