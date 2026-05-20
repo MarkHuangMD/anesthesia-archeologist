@@ -15,7 +15,6 @@
             --success-color: #38a169;
             --success-bg: #f0fff4;
             --border-color: #edf2f7;
-            --chapter-bg: #e2e8f0;
         }
 
         [data-theme="dark"] {
@@ -28,7 +27,6 @@
             --success-color: #48bb78;
             --success-bg: #22543d;
             --border-color: #4a5568;
-            --chapter-bg: #4a5568;
         }
 
         body {
@@ -92,9 +90,6 @@
             border-color: var(--primary-color);
         }
 
-        .chapter-section { display: none; }
-        .chapter-section.active { display: block; }
-
         .card {
             background: var(--card-bg);
             border-radius: 12px;
@@ -124,12 +119,6 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             font-size: 0.92rem;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .option:active {
-            background-color: var(--border-color);
         }
 
         .toggle-btn {
@@ -160,8 +149,13 @@
             font-weight: bold;
             font-size: 1.05rem;
         }
+        
+        #quiz-container { min-height: 200px; }
     </style>
-</head>
+
+    <script src="chapters/ch54.js"></script>
+    <script src="chapters/ch60.js"></script>
+    </head>
 <body>
 
     <div class="header">
@@ -170,181 +164,62 @@
     </div>
 
     <div class="nav-tabs">
-        <button class="tab-btn active" onclick="switchTab('ch54')">Ch54 減重</button>
-        <button class="tab-btn" onclick="switchTab('ch60')">Ch60 骨科</button>
-        <button class="tab-btn" onclick="switchTab('ch58')">Ch58 產科</button>
-        <button class="tab-btn" onclick="switchTab('ch56')">Ch56 移植</button>
-        <button class="tab-btn" onclick="switchTab('ch55')">Ch55 泌尿</button>
+        <button class="tab-btn active" onclick="loadQuiz('ch54')">Ch54 減重</button>
+        <button class="tab-btn" onclick="loadQuiz('ch60')">Ch60 骨科</button>
+        <button class="tab-btn" onclick="loadQuiz('ch58')">Ch58 產科</button>
+        <button class="tab-btn" onclick="loadQuiz('ch56')">Ch56 移植</button>
+        <button class="tab-btn" onclick="loadQuiz('ch55')">Ch55 泌尿</button>
     </div>
 
-    <div id="ch54" class="chapter-section active">
-        <div class="card">
-            <div class="meta">110年 筆試第25題</div>
-            <div class="question">下列何者不是減重手術麻醉照顧需要注意的事項？</div>
-            <div class="option">(A) 麻醉中使用靜靜脈輸注 propofol 較 desflurane 氣體麻醉恢復更快</div>
-            <div class="option">(B) 術中需注意呼吸道處置、擺位和麻醉藥物劑量調整</div>
-            <div class="option">(C) 術前評估包括合併症、呼吸道狀況、心臟功能和肝功能等</div>
-            <div class="option">(D) Propofol、rocuronium、sugammadex 和 remifentanil 劑量可根據理想體重 (ideal body weight) 調整</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(A)</span>
-                <p>肥胖病患因脂肪組織多，脂溶性高的 Propofol 長時間輸注易累積；反之低血/氣溶解度的 Desflurane 甦醒速度顯著較快。</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="ch60" class="chapter-section">
-        <div class="card">
-            <div class="meta">111年 筆試第19題</div>
-            <div class="question">關於病人接受骨科手術麻醉時須注意事項，何者為非？</div>
-            <div class="option">(A) 在急性心肌梗塞發作過後 2 周內進行髖或膝關節置換，心因性風險明顯增加</div>
-            <div class="option">(B) 關節置換手術中發生中風的機率為 0.2%</div>
-            <div class="option">(C) 約有 5-50% 老年病患會發生術後譫妄</div>
-            <div class="option">(D) 對於中度和高度心血管風險的病人接受骨科手術前，阿斯匹靈可以在術前 5 天停用，術後 7 天再開始使用</div>
-            <div class="option">(E) 類風溼性關節炎病史病人麻醉時需注意顳顎關節侷限、會厭開口狹窄及頸椎不穩定</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(D)</span>
-                <p>中高心血管風險者，圍術期常規不建議貿然停用 Aspirin，否則會引發反彈性血栓或支架栓塞事件。</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="meta">111年 筆試第20題</div>
-            <div class="question">80 歲老人大腿骨折預計進行手術，關於骨折手術麻醉，何者為非？</div>
-            <div class="option">(A) 老年病患發生近端股骨骨折，一年死亡率可高達 30%</div>
-            <div class="option">(B) 髖關節骨折所造成的疼痛和壓力常導致缺血性心臟病</div>
-            <div class="option">(C) 對於病況穩定的病人，不需要早期 (&lt;24小時) 骨折復位手術</div>
-            <div class="option">(D) 區域麻醉可減低深層靜脈血栓生成、減少肺栓塞並降低呼吸道併發症</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(C)</span>
-                <p>老年髖關節骨折應儘早（24-48小時內）手術，以減少長期臥床引發的肺炎、DVT及高死亡率。</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="meta">113年 筆試第59題</div>
-            <div class="question">80 歲男性有冠狀動脈疾病病史，接受全膝關節置換手術。術中突然發生低血壓休克，先前有使用骨水泥 (bone cement)。下列敘述何者最為適當？</div>
-            <div class="option">(A) 手術後 2 周內發生急性心肌梗塞的風險增加 30 倍以上</div>
-            <div class="option">(B) 此病患手術中可以使用 tranexamic acid (TXA) 降低失血</div>
-            <div class="option">(C) 右心功能不佳並非發生 bone cement implantation syndrome (BCIS) 之危險因子</div>
-            <div class="option">(D) BCIS 主因是單體毒性，經 TEE 檢查並不會發現有 embolism</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(B)</span>
-                <p>關節置換術中使用 TXA 能有效止血且安全性高。BCIS 常伴隨機械性微小血栓，可在 TEE 下清晰看見右心栓塞影像。</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="ch58" class="chapter-section">
-        <div class="card">
-            <div class="meta">110年 筆試第17題</div>
-            <div class="question">關於減痛分娩的敘述，下列作法何者最合適？</div>
-            <div class="option">(A) 需等到子宮頸口擴張至 3 公分以上才可施打</div>
-            <div class="option">(B) Remifentanil 靜脈輸注適用在所有產婦且無風險</div>
-            <div class="option">(C) Neuraxial analgesia (區域性減痛) 是目前最有效的產科減痛分娩方式</div>
-            <div class="option">(D) Meperidine 肌肉注射是產婦止痛首選</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(C)</span>
-                <p>產科止痛黃金標準為 Neuraxial (硬膜外/CSE)。減痛時機只要產婦疼痛有需求即可進入，無 3 公分之限制。</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="meta">111年 筆試第50題</div>
-            <div class="question">孕婦於剖腹產全身麻醉誘導時，吸入性肺炎風險增加的原因及注意事項何者錯誤？</div>
-            <div class="option">(A) Progesterone 和 estrogen 增加會使下食道括約肌張力下降</div>
-            <div class="option">(B) 胎盤分泌的 Gastrin 會增加孕婦胃酸分泌</div>
-            <div class="option">(C) 孕婦的胃排空時間在未進入產程前不會顯著延長</div>
-            <div class="option">(D) 臨床常用的肌肉鬆弛劑(如 Rocuronium)通常會大量經過胎盤造成新生兒呼吸抑制</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(D)</span>
-                <p>常用之非去極化肌鬆劑（如 Rocuronium）為高度游離、高分子量，極不易跨越胎盤屏障，常規劑量不影響胎兒。</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="meta">111年 筆試第51題</div>
-            <div class="question">關於孕婦的生理變化敘述何者正確？</div>
-            <div class="option">(A) MV 沒有改變，FRC 減少</div>
-            <div class="option">(B) Cardiac output (CO) 增加，Heart rate (HR) 增加</div>
-            <div class="option">(C) SVR 下降，PVR 沒有改變</div>
-            <div class="option">(D) 產婦對吸入性麻醉藥的敏感性(MAC)跟一般婦女一樣</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(B)</span>
-                <p>孕婦 CO 增加 30-50%，HR 增加 15-20%。MV 大幅增加，而 MAC 需求則顯著下降 30-40%。</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="meta">112 / 114年 筆試雙重熱門題</div>
-            <div class="question">關於產婦麻醉的死亡風險，下列敘述何者正確？</div>
-            <div class="option">(A) 大部分發生於剖腹產手術的術後恢復期</div>
-            <div class="option">(B) 困難氣道(Difficult airway)與插管失敗為施行 GA 產婦最常見死亡相關因素</div>
-            <div class="option">(C) 死亡率從早年逐年下降，推測原因與插管工具進步有關</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(B)</span>
-                <p>由於產婦黏膜水腫與高氧耗速度，困難氣道與無法順利插管通氣長年來皆是 GA 產科麻醉致死的最主要風險。</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="ch56" class="chapter-section">
-        <div class="card">
-            <div class="meta">110年 筆試第20題</div>
-            <div class="question">關於活體肝臟移植手術麻醉之敘述，下列何者錯誤？</div>
-            <div class="option">(A) 捐贈者術後可能發生凝血延長，故術前若植入硬脊膜外導管，應於術後第1-2天儘早移除</div>
-            <div class="option">(B) 術中翻動肝臟可能造成靜脈回流受阻使血壓降低</div>
-            <div class="option">(C) 常要求低中心靜脈壓 (&lt;5 mmHg) 來減少切肝失血量</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(A)</span>
-                <p>活體切肝術後第 2-4 天是凝血功能最差的高峰期，絕不可在此時拔除 Epidural 導管以免引發硬膜外血腫。</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="meta">111年 筆試第56題</div>
-            <div class="question">關於肝臟移植麻醉圍術期過程，下列敘述何者為錯誤？</div>
-            <div class="option">(A) 無肝期夾住 IVC 會降低約一半的回心血流量</div>
-            <div class="option">(B) 新肝期再灌流時引發的高血鉀，可用 Calcium 穩定心肌</div>
-            <div class="option">(E) 末期肝病受贈者之心血管特徵為高心輸出量、高動脈血壓和高系統性血管阻力</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(E)</span>
-                <p>末期肝病（ESLD）的高動力循環特徵為：高心輸出量（High CO）、低血壓（Low BP）以及極低的周邊血管阻力（Low SVR）。</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="ch55" class="chapter-section">
-        <div class="card">
-            <div class="meta">110年 筆試第23題</div>
-            <div class="question">關於經尿道攝護腺刮除術 (TURP) 的麻醉照護，下列敘述何者正確？</div>
-            <div class="option">(A) 與脊髓麻醉相較，全身麻醉在術中更容易吸收較多的沖洗液</div>
-            <div class="option">(B) 為避免術中低體溫，加溫沖洗液在指引中是被明文禁止的</div>
-            <div class="option">(C) TURP syndrome 產生腦水腫的主為血液滲透壓快速下降，水分移入腦細胞</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(C)</span>
-                <p>TURP 症候群的核心在於急性大量吸收低張沖洗液，導致稀釋性低血鈉及血液總滲透壓急性下降，使水分大量滲入腦細胞引發急性腦水腫。</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="meta">111年 筆試第49題</div>
-            <div class="question">傳統 Monopolar TURP 手術過程中，下列注意事項何者正確？</div>
-            <div class="option">(A) 脊椎麻醉可減少沖洗液的吸收</div>
-            <div class="option">(B) 單極電燒沖洗液最好使用等張的 Normal saline 以免低血鈉</div>
-            <div class="option">(D) 當急性稀釋性低血鈉使得血鈉值降到 120 mEq/L 左右時，病人常呈現躁動 (restlessness) 或意識混亂 (confusion)</div>
-            <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
-            <div class="answer-panel">
-                <span class="ans-letter">正確答案：(D)</span>
-                <p>Spinal 麻醉是利於「早期發現」病患意識改變而非減少吸收。單極電燒不可使用 NS（會導電分散能量）。當血鈉降至 120 mEq/L 時，最典型的清醒初期表徵即為 Restlessness 與 Confusion。</p>
-            </div>
-        </div>
-    </div>
+    <div id="quiz-container"></div>
 
     <script>
+        // 初始化載入預設章節 (Ch54)
+        window.onload = function() {
+            loadQuiz('ch54');
+        };
+
+        // 動態渲染考題的神奇地帶
+        function loadQuiz(chapterKey) {
+            // 切換頁籤高亮
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = ''; // 清空上一章的內容
+            
+            // 抓取全域變數中的章節資料 (例如 window.ch54_data)
+            const quizData = window[chapterKey + '_data'];
+
+            if (!quizData || quizData.length === 0) {
+                container.innerHTML = `<div class="card" style="text-align:center;color:var(--text-muted);">💡 該章節尚未匯入題目，讀完書隨時丟給我整理！</div>`;
+                return;
+            }
+
+            // 跑迴圈把該章節每一題生出來
+            quizData.forEach((item) => {
+                let optionsHTML = '';
+                item.options.forEach(opt => {
+                    optionsHTML += `<div class="option">${opt}</div>`;
+                });
+
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="meta">${item.meta}</div>
+                    <div class="question">${item.question}</div>
+                    <div class="options">${optionsHTML}</div>
+                    <button class="toggle-btn" onclick="toggleAns(this)">💡 顯示正確答案與解析</button>
+                    <div class="answer-panel">
+                        <span class="ans-letter">正確答案：${item.answer}</span>
+                        <p>${item.hint}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            window.scrollTo(0,0);
+        }
+
         function toggleAns(btn) {
             var panel = btn.nextElementSibling;
             if (panel.style.display === "block") {
@@ -354,15 +229,6 @@
                 panel.style.display = "block";
                 btn.textContent = "🔒 隱藏答案";
             }
-        }
-
-        function switchTab(chapterId) {
-            document.querySelectorAll('.chapter-section').forEach(sec => sec.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById(chapterId).classList.add('active');
-            event.target.classList.add('active');
-            window.scrollTo(0,0);
         }
 
         function toggleTheme() {
