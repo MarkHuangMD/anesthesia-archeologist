@@ -1,124 +1,86 @@
-// chapters/ch54.js
+// Ch54 減重麻醉統計資料 (供網頁顯示)
+window.ch54_info = {
+    total_count: 10,
+    percentage: "2.0%",
+    distribution: [
+        { year: 114, questions: [49, 50] },
+        { year: 113, questions: [49, 50] },
+        { year: 112, questions: [49, 50] },
+        { year: 111, questions: [52] },
+        { year: 110, questions: [25, 52, 53] }
+    ]
+};
+
+// 題目與詳解資料庫
 window.ch54_data = [
     {
         meta: "114年 筆試第49題",
         question: "有關病態肥胖患者接受減重手術（Bariatric Surgery）的麻醉前評估，下列敘述何者錯誤？",
-        options: [
-            "(A) 肥胖患者的阻塞性睡眠呼吸中止症（OSA）盛行率極高，術前應常規評估其氣道與呼吸狀況。",
-            "(B) 評估心血管風險時，常因患者行動不便而難以精確評估其運動耐受力（METs）。",
-            "(C) 肥胖患者的胃容積與胃酸分泌量通常減少，因此術後發生吸入性肺炎的風險顯著低於正常體重者。",
-            "(D) 術前常合併有非酒精性脂肪肝（NAFLD），可能影響部分麻醉藥物的代謝。"
-        ],
+        options: ["(A) 肥胖患者的阻塞性睡眠呼吸中止症（OSA）盛行率極高", "(B) 評估心血管風險時，常因行動不便而難以精確評估運動耐受力", "(C) 肥胖患者的胃容積與胃酸分泌量通常減少", "(D) 術前常合併有非酒精性脂肪肝（NAFLD）"],
         answer: "(C)",
-        hint: "Miller Ch54 課本指出，病態肥胖患者的胃容積、胃內壓力與胃酸分泌量通常是顯著「增加」而非減少，且常合併胃食道逆流（GERD），因此屬於吸入性肺炎（Aspiration pneumonia）的高風險群，術前需常規給予預防吸入的藥物處置。"
+        explanation: "肥胖病患的胃容積、胃內壓力與胃酸分泌量通常是顯著增加而非減少，且常合併胃食道逆流（GERD），屬於吸入性肺炎的高風險群 [cite: 1363, 1463]。"
     },
     {
         meta: "114年 筆試第50題",
-        question: "關於肥胖患者的全麻給藥劑量調整，下列哪一種類肌肉鬆弛劑的「維持劑量（Maintenance dose）」，指引多建議嚴格按照「理想體重（Ideal Body Weight, IBW）」而非實際體重計算以防蓄積延遲甦醒？",
-        options: [
-            "(A) Succinylcholine",
-            "(B) Rocuronium 或 Vecuronium",
-            "(C) 所有的吸入性氣體藥物",
-            "(D) 大劑量荷爾蒙補充劑"
-        ],
+        question: "關於肥胖患者的全麻給藥劑量調整，下列哪一種類肌肉鬆弛劑的「維持劑量」，建議按照「理想體重（IBW）」而非實際體重計算以防蓄積延遲甦醒？",
+        options: ["(A) Succinylcholine", "(B) Rocuronium 或 Vecuronium", "(C) 所有的吸入性氣體藥物", "(D) 大劑量荷爾蒙補充劑"],
         answer: "(B)",
-        hint: "臨床常用的非去極化肌肉鬆弛劑（如 Rocuronium、Vecuronium）由於親水性高、不易分佈於脂肪組織中，因此其「維持劑量（Maintenance dose）」必須嚴格依據理想體重 (IBW) 計算，否則若按實際體重 (TBW) 給藥會造成體內嚴重蓄積與甦醒延遲。"
+        explanation: "非去極化肌肉鬆弛劑（如 rocuronium、vecuronium）應依據理想體重（IBW）計算，以避免在肥胖病患體內過度蓄積 [cite: 2006]。"
     },
     {
         meta: "113年 筆試第49題",
         question: "病態肥胖患者接受減重手術的術前麻醉評估，下列哪一項敘述錯誤？",
-        options: [
-            "(A) 合併阻塞性睡眠呼吸中止症（OSA）的機率極高，需密切評估氣道",
-            "(B) 肥胖患者的胃容積與胃酸分泌量通常增加，術後發生吸入性肺炎的風險高",
-            "(C) 患者行動不便常使運動耐受力（METs）的心肺風險評估變得困難",
-            "(D) 肥胖患者百分之百不會合併任何非酒精性脂肪肝"
-        ],
+        options: ["(A) 合併阻塞性睡眠呼吸中止症（OSA）的機率極高", "(B) 肥胖患者的胃容積與胃酸分泌量通常增加", "(C) 患者行動不便常使運動耐受力評估困難", "(D) 肥胖患者百分之百不會合併任何非酒精性脂肪肝"],
         answer: "(D)",
-        hint: "非酒精性脂肪肝（NAFLD）及非酒精性脂肪肝炎（NASH）在病態肥胖及減重手术患者中的盛行率極高。課本強調術前評估應注意其對特定麻醉藥物廓清與代謝的潛在影響，故 (D) 敘述完全錯誤。"
+        explanation: "非酒精性脂肪肝（NAFLD）及 NASH 在病態肥胖病患中的盛行率極高，常需於術前評估其肝功能 [cite: 1458]。"
     },
     {
         meta: "113年 筆試第50題",
-        question: "關於病態肥胖患者的全麻藥物劑量調整，下列哪一種肌肉鬆弛劑的「維持劑量」，指引多建議嚴格按照「理想體重（IBW）」而非實際體重計算以防延遲甦醒？",
-        options: [
-            "(A) Succinylcholine",
-            "(B) Rocuronium 或 Vecuronium",
-            "(C) 所有的吸入性揮發性氣體",
-            "(D) 大劑量高張氯化鈉"
-        ],
+        question: "關於病態肥胖患者的全麻藥物劑量調整，下列哪一種肌肉鬆弛劑的「維持劑量」，建議嚴格按照「理想體重（IBW）」而非實際體重計算以防延遲甦醒？",
+        options: ["(A) Succinylcholine", "(B) Rocuronium 或 Vecuronium", "(C) 所有的吸入性揮發性氣體", "(D) 大劑量高張氯化鈉"],
         answer: "(B)",
-        hint: "此為歷屆專高重複出現的黃金超熱門考點。非去極化肌鬆劑維持量應按理想體重 (IBW) 計算；反之，去極化肌鬆劑 Succinylcholine 的誘導劑量則因偽膽鹼酯酶（Pseudocholinesterase）活性與體重成正比上升，需以實際體重 (TBW) 計算。"
+        explanation: "非去極化肌鬆劑維持量應按 IBW 計算，避免蓄積 [cite: 2006]。"
     },
     {
         meta: "112年 筆試第49題",
         question: "病態肥胖患者接受減重手術的術前麻醉評估，下列哪一項敘述錯誤？",
-        options: [
-            "(A) 合併阻塞性睡眠呼吸中止症（OSA）的機率極高，需密切評估氣道。",
-            "(B) 肥胖患者的胃容積與胃酸分泌量通常增加，術後發生吸入性肺炎的風險高。",
-            "(C) 患者行動不便常使運動耐受力（METs）的心肺風險評估變得困難。",
-            "(D) 肥胖患者百分之百不會合併任何非酒精性脂肪肝。"
-        ],
+        options: ["(A) 合併OSA機率高", "(B) 胃容積增加", "(C) METs 評估困難", "(D) 肥胖患者百分之百不會合併任何非酒精性脂肪肝"],
         answer: "(D)",
-        hint: "本題考點與 113 年第 49 題完全一致。高比例的減重手術病患皆合併有脂肪肝（NAFLD），甚至可能進展至肝硬化，絕非百分之百不會合併。"
+        explanation: "如前所述，NAFLD 在肥胖病患中非常普遍，並非絕對不會合併 [cite: 1458]。"
     },
     {
         meta: "112年 筆試第50題",
-        question: "關於病態肥胖患者的全麻藥物劑量調整，下列哪一種肌肉鬆弛劑的「維持劑量」，指引多建議嚴格按照「理想體重（IBW）」而非實際體重計算以防延遲甦醒？",
-        options: [
-            "(A) Succinylcholine",
-            "(B) Rocuronium 或 Vecuronium",
-            "(C) 所有的吸入性揮發性氣體",
-            "(D) 大劑量高張氯化鈉"
-        ],
+        question: "關於病態肥胖患者的全麻藥物劑量調整，下列哪一種肌肉鬆弛劑的「維持劑量」，建議嚴格按照「理想體重（IBW）」而非實際體重計算以防延遲甦醒？",
+        options: ["(A) Succinylcholine", "(B) Rocuronium 或 Vecuronium", "(C) 所有的吸入性揮發性氣體", "(D) 大劑量高張氯化鈉"],
         answer: "(B)",
-        hint: "本題考點與 113、114 年維持相同規律。記住非去極化肌鬆劑（Rocuronium / Vecuronium）在病態肥胖病患的「維持量」一定要選理想體重 (IBW) 以策安全。"
+        explanation: "非去極化肌鬆劑維持量應按 IBW 計算 [cite: 2006]。"
     },
     {
         meta: "111年 筆試第52題",
-        question: "病態肥胖病患 Morbid obesity 圍術期風險增加,以下麻醉注意事項敘述何者錯誤:",
-        options: [
-            "(A)常見困難呼吸道處理,須注意斜坡擺位 ramped position,耳垂與胸骨同水平高度及 sniffing position,以改善 laryngoscopic view",
-            "(B)一般脂溶性 lipophilic藥物,其分布 volume of distribution 受脂肪組織多寡影響,劑量須以實際體重TBW計算如Propofol及Remifentanil",
-            "(C)術前評估包括合併症、呼吸道的狀況、心臟功能和肝功能等",
-            "(D) 病患容易肺塌陷atelectasis,術中通氣可以同時併用中等吐氣末正壓 (PEEP)及肺泡再擴張術(recruitment maneuvers)來改善",
-            "(E)體重指數(BMI)大於40kg/m2 或是超過 30 kg/m2 且合併有像高血壓、糖尿病和高膽固醇血症等,是一般建議施行肥胖手術的對象"
-        ],
+        question: "病態肥胖病患圍術期風險增加,以下麻醉注意事項敘述何者錯誤:",
+        options: ["(A) 須注意斜坡擺位 (ramped position) 以改善 laryngoscopic view", "(B) Propofol及Remifentanil 劑量須以實際體重TBW計算", "(C) 術前評估包括合併症、呼吸道、心臟功能和肝功能", "(D) 術中可同時併用 PEEP 及 recruitment maneuvers", "(E) BMI大於40是建議手術對象"],
         answer: "(B)",
-        hint: "雖然 Propofol 和 Remifentanil 是高度脂溶性藥物，但為了避免過量投藥導致嚴重的循環抑制與低血壓，指引多建議其全麻「誘導劑量（Induction dose）」仍應按照「理想體重 (IBW)」來計算；而 Propofol 的「持續維持輸注劑量」才考慮使用實際體重 (TBW)。故 (B) 說兩者皆依 TBW 計算是錯的。"
+        explanation: "Propofol 的全麻誘導劑量應以理想體重（IBW）計算，而非 TBW，以防過量導致循環抑制 [cite: 2006]。"
     },
     {
         meta: "110年 筆試第25題",
         question: "下列何者不是減重手術麻醉照顧需要注意的事項？",
-        options: [
-            "(A) 麻醉中使用靜脈輸注 propofol 較 desflurane 氣體麻醉恢復更快",
-            "(B) 術中需注意呼吸道處置、擺位和麻醉藥物劑量調整",
-            "(C) 術前評估包括合併症、呼吸道狀況、心臟功能和肝功能等",
-            "(D) Propofol、rocuronium、sugammadex 和 remifentanil 劑量可根據理想體重 (ideal body weight) 調整"
-        ],
+        options: ["(A) 麻醉中使用靜脈輸注 propofol 較 desflurane 氣體麻醉恢復更快", "(B) 術中需注意呼吸道處置、擺位和麻醉藥物劑量調整", "(C) 術前評估包括合併症、呼吸道狀況、心臟功能和肝功能等", "(D) 劑量可根據理想體重調整"],
         answer: "(A)",
-        hint: "在病態肥胖患者中，由於 Desflurane 擁有極低的血/氣分配係數與較低的組織溶解度，在脂肪組織中累積極少，因此其甦醒與恢復速度顯著「快於」持續靜脈輸注的全靜脈麻醉 Propofol。故 (A) 敘述相反，為本題選鈕。"
+        explanation: "Desflurane 因其低血/氣溶解度，在肥胖患者中的甦醒速度通常優於長時間持續輸注 Propofol [cite: 2017, 2018]。"
     },
     {
         meta: "110年 筆試第52題",
         question: "病態肥胖患者接受減重手術的術前麻醉評估，下列哪一項敘述正確？",
-        options: [
-            "(A) 合併阻塞性睡眠呼吸中止症（OSA）的機率極高，需密切評估氣道",
-            "(B) 肥胖患者的胃容積與胃酸分泌量通常增加，術後發生吸入性肺炎的風險高",
-            "(C) 患者行動不便常使運動耐受力（METs）的心肺風險評估變得困難",
-            "(D) 以上皆是肥胖手術需要特別注意的臨床評估重點"
-        ],
+        options: ["(A) OSA機率高", "(B) 胃容積增加", "(C) METs 評估困難", "(D) 以上皆是"],
         answer: "(D)",
-        hint: "本題為 112 年與 113 年第 49 題的前身（倒裝考法）。(A)、(B)、(C) 選項內文皆為 Miller 課本中定義肥胖患者最經典、最核心的生理與術前評估考點，因此 (D) 以上皆是為最恰當答案。"
+        explanation: "肥胖病患具備上述所有臨床風險，需全面評估 [cite: 1363, 1463]。"
     },
     {
         meta: "110年 筆試第53題",
         question: "關於病態肥胖患者的全麻藥物劑量調整，下列哪一種肌肉鬆弛劑的「維持劑量」，指引多建議嚴格按照「理想體重（IBW）」而非實際體重計算以防延遲甦醒？",
-        options: [
-            "(A) Succinylcholine",
-            "(B) Rocuronium 或 Vecuronium",
-            "(C) 所有的吸入性揮發性氣體",
-            "(D) 大劑量高張氯化鈉"
-        ],
+        options: ["(A) Succinylcholine", "(B) Rocuronium 或 Vecuronium", "(C) 所有的吸入性揮發性氣體", "(D) 大劑量高張氯化鈉"],
         answer: "(B)",
-        hint: "此考點在 110、112、113、114 年連續出現，屬於絕對不能丟分的送分題。非去極化肌鬆劑維持量請務必鎖定理想體重 (IBW)。"
+        explanation: "非去極化肌鬆劑維持量請務必以 IBW 計算 [cite: 2006]。"
     }
 ];
