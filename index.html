@@ -187,6 +187,19 @@
 
             const container = document.getElementById('quiz-container');
             container.innerHTML = ''; // 清空上一章的內容
+
+            // 3. 【這裡就是你要貼的位置】讀取統計資料並顯示
+            const stats = window[chapterKey + '_info'];
+            if (stats) {
+                // 使用 += 把統計卡片「加進去」，不要覆蓋掉
+                container.innerHTML += `
+                    <div class="card" style="border: 2px solid var(--primary-color); margin-bottom: 20px;">
+                        <div class="meta" style="color:var(--primary-color)">📊 統計資料</div>
+                        <p style="margin: 5px 0;">1. 110-114年總共有：<strong>${stats.total_count} 題</strong> (佔 500 總題數之 <strong>${stats.percentage}</strong>)</p>
+                        <p style="margin: 5px 0;">2. 年份與題號分佈：<br>${stats.distribution}</p>
+                    </div>
+                `;
+            }
             
             // 抓取全域變數中的章節資料 (例如 window.ch54_data)
             const quizData = window[chapterKey + '_data'];
