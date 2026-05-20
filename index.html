@@ -188,13 +188,14 @@
             const container = document.getElementById('quiz-container');
             container.innerHTML = ''; // 清空上一章的內容
 
-           // --- 這裡保證統計資料顯示在最上面 ---
+           // 抓取統計資料
             const info = window[chapterKey + '_info'];
             if (info) {
+                // 這裡直接輸出字串，不用再用 map
                 container.innerHTML += `
-                    <div class="card" style="border: 2px solid var(--primary-color);">
+                    <div class="card" style="border: 2px solid var(--primary-color); margin-bottom: 20px;">
                         <div class="meta" style="color:var(--primary-color)">📊 ${info.title} 統計資料</div>
-                        <div style="font-size: 0.95rem;">
+                        <div style="font-size: 0.95rem; line-height: 1.6;">
                             1. 110-114 年總共有：<strong>${info.total_count} 題</strong> (佔總題數 ${info.percentage})<br>
                             2. 分別是：<br>${info.distribution}
                         </div>
